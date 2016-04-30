@@ -4,7 +4,7 @@ class GameScene: SKScene {
     let invaderSquad = InvaderSquad(rowCount: 3, columnCount: 10)
 
     override func didMoveToView(view: SKView) {
-        invaderSquad.addToScene(self)
+        addChild(invaderSquad)
 
         /*
         location = CGPoint(x: 0, y: 0)

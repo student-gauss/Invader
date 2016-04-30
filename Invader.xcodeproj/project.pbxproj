@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		86251EBD1C95BB99004A65D0 /* InvaderSquad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86251EBC1C95BB99004A65D0 /* InvaderSquad.swift */; };
 		86251EBF1C95BD4A004A65D0 /* Invader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86251EBE1C95BD4A004A65D0 /* Invader.swift */; };
-		86251EC11C95BEAC004A65D0 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86251EC01C95BEAC004A65D0 /* Actor.swift */; };
 		86251EC31C95C231004A65D0 /* Invader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86251EBE1C95BD4A004A65D0 /* Invader.swift */; };
 		8678FE8C1C952E5000E851AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678FE8B1C952E5000E851AA /* AppDelegate.swift */; };
 		8678FE8E1C952E5000E851AA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678FE8D1C952E5000E851AA /* GameScene.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		86251EBC1C95BB99004A65D0 /* InvaderSquad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvaderSquad.swift; sourceTree = "<group>"; };
 		86251EBE1C95BD4A004A65D0 /* Invader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invader.swift; sourceTree = "<group>"; };
-		86251EC01C95BEAC004A65D0 /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		8678FE881C952E5000E851AA /* Invader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Invader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8678FE8B1C952E5000E851AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8678FE8D1C952E5000E851AA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 		8678FE8A1C952E5000E851AA /* Invader */ = {
 			isa = PBXGroup;
 			children = (
-				86251EC01C95BEAC004A65D0 /* Actor.swift */,
 				86251EBE1C95BD4A004A65D0 /* Invader.swift */,
 				8678FE8B1C952E5000E851AA /* AppDelegate.swift */,
 				8678FE8D1C952E5000E851AA /* GameScene.swift */,
@@ -270,7 +267,6 @@
 				86251EBF1C95BD4A004A65D0 /* Invader.swift in Sources */,
 				8678FE8C1C952E5000E851AA /* AppDelegate.swift in Sources */,
 				86251EBD1C95BB99004A65D0 /* InvaderSquad.swift in Sources */,
-				86251EC11C95BEAC004A65D0 /* Actor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
