@@ -1,10 +1,13 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    let invaderSquad = InvaderSquad(rowCount: 3, columnCount: 10)
+    let invaderSquad = InvaderSquad(rowCount: 3, columnCount: 4)
 
     override func didMoveToView(view: SKView) {
         addChild(invaderSquad)
+
+        let rect = invaderSquad.calculateAccumulatedFrame()
+        invaderSquad.position = CGPoint(x:(size.width - rect.size.width) / 2, y:size.height - rect.size.height)
 
         /*
         location = CGPoint(x: 0, y: 0)
