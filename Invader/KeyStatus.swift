@@ -5,6 +5,7 @@ class KeyStatus {
     enum KeyCode: CUnsignedShort {
         case LeftArrow = 0x7B
         case RightArrow = 0x7C
+        case Space = 0x31
     }
     var pressedKeys = Set<CUnsignedShort>()
 
@@ -22,5 +23,9 @@ class KeyStatus {
 
     var isRightArrowKeyPressed: Bool {
         return pressedKeys.contains(KeyCode.RightArrow.rawValue)
+    }
+
+    var isSpaceKeyPressed: Bool {
+        return pressedKeys.contains(KeyCode.Space.rawValue)
     }
 }

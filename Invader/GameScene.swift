@@ -2,7 +2,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     let keyStatus = KeyStatus()
-    let invaderSquad = InvaderSquad(rowCount: 3, columnCount: 4)
+    let invaderSquad = InvaderSquad(rowCount: 6, columnCount: 20)
     let artillery = Artillery()
     var startTime = Double.NaN
     var velocity = 1.0
@@ -40,7 +40,6 @@ class GameScene: SKScene {
         //   +--------------------------+
         // (0,0)
         let squadRect = invaderSquad.calculateAccumulatedFrame()
-        print(squadRect)
         invaderSquad.position = CGPoint(x: -squadRect.origin.x, y: self.size.height - squadRect.size.height - squadRect.origin.y)
 
         //  Game Scene
@@ -107,6 +106,14 @@ class GameScene: SKScene {
 
         if keyStatus.isRightArrowKeyPressed {
             artillery.position.x += +3
+        }
+
+        if keyStatus.isSpaceKeyPressed {
+            let bullet = Bullet()
+            bullet.position = artillery.position
+            let moveUp = SKAction.moveBy(CGVector(dx: 0, dy: self.size.height), duration: 5)
+            bullet.runAction(moveUp)
+            addChild(bullet)
         }
 
 //        let elapsedTime = currentTime - previousTime;
