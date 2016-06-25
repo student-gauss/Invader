@@ -5,15 +5,6 @@ class GameScene: SKScene {
     let invaderSquad = InvaderSquad(rowCount: 6, columnCount: 20)
     let artillery = Artillery()
     var startTime = Double.NaN
-    var velocity = 1.0
-
-    func updateSquadAction() {
-        let squadRect = invaderSquad.calculateAccumulatedFrame()
-        let currentPosition = invaderSquad.position
-
-
-
-    }
 
     override func didMoveToView(view: SKView) {
         //  Squad (A == anchor)
@@ -60,30 +51,12 @@ class GameScene: SKScene {
         let moveLeft = SKAction.moveBy(CGVector(dx: -(self.size.width - squadRect.size.width), dy: 0), duration: 3)
 
         invaderSquad.runAction(SKAction.sequence([moveRight, moveDown, moveLeft, moveDown]))
-//        invaderSquad.runAction(SKAction.moveBy(CGVector(dx:0, dy:100), duration: 10))
 
         let artilleryRect = artillery.calculateAccumulatedFrame()
         artillery.position = CGPoint(x: -artilleryRect.origin.x, y: artilleryRect.size.height)
 
         addChild(invaderSquad)
         addChild(artillery)
-        /*
-        location = CGPoint(x: 0, y: 0)
-        velocity = CGVector(dx: 1, dy: 1)
-
-        sprite = SKSpriteNode(imageNamed:"Invader")
-        sprite.position = location;
-        sprite.setScale(0.5)
-
-        let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-        sprite.runAction(SKAction.repeatActionForever(action))
-
-        self.addChild(sprite)
-*/
-    }
-
-    override func mouseDown(theEvent: NSEvent) {
-        /* Called when a mouse click occurs */
     }
 
     override func keyDown(theEvent: NSEvent) {
@@ -115,13 +88,5 @@ class GameScene: SKScene {
             bullet.runAction(moveUp)
             addChild(bullet)
         }
-
-//        let elapsedTime = currentTime - previousTime;
-//        invaderSquad.position.x += CGFloat(elapsedTime)
-
-//        print(elapsedTime)
-        //        invaderSquad.runAction(SKAction.moveBy(CGVector(dx:1, dy:0), duration: 1))
-
-//        previousTime = currentTime
     }
 }
