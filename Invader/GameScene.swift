@@ -82,11 +82,7 @@ class GameScene: SKScene {
         }
 
         if keyStatus.isSpaceKeyPressed {
-            let bullet = Bullet()
-            bullet.position = artillery.position
-            let moveUp = SKAction.moveBy(CGVector(dx: 0, dy: self.size.height), duration: 5)
-            bullet.runAction(moveUp)
-            addChild(bullet)
+            artillery.fireBullet(currentTime)
         }
     }
 }
