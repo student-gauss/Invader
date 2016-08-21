@@ -1,6 +1,6 @@
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     let keyStatus = KeyStatus()
     let invaderSquad = InvaderSquad(rowCount: 6, columnCount: 20)
     let artillery = Artillery()
@@ -54,6 +54,12 @@ class GameScene: SKScene {
 
         let artilleryRect = artillery.calculateAccumulatedFrame()
         artillery.position = CGPoint(x: -artilleryRect.origin.x, y: artilleryRect.size.height)
+
+        let physicsBody = SKPhysicsBody(rectangleOfSize: squadRect.size)
+        physicsBody.dynamic = false
+        invaderSquad.physicsBody = physicsBody
+
+        self.physicsWorld.contactDelegate = self
 
         addChild(invaderSquad)
         addChild(artillery)

@@ -20,6 +20,7 @@
 		8678FEA01C952E5000E851AA /* InvaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678FE9F1C952E5000E851AA /* InvaderTests.swift */; };
 		8678FEAB1C952E5000E851AA /* InvaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678FEAA1C952E5000E851AA /* InvaderUITests.swift */; };
 		868A410E1D1EABD900D04BC7 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A410D1D1EABD900D04BC7 /* Bullet.swift */; };
+		86F0AF181D6A587C00283FA8 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F0AF171D6A587C00283FA8 /* Interaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		8678FEAA1C952E5000E851AA /* InvaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaderUITests.swift; sourceTree = "<group>"; };
 		8678FEAC1C952E5000E851AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		868A410D1D1EABD900D04BC7 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		86F0AF171D6A587C00283FA8 /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				86266E981CF0B4EB00CB4D3A /* Artillery.swift */,
 				86266E9A1CF2602A00CB4D3A /* KeyStatus.swift */,
 				868A410D1D1EABD900D04BC7 /* Bullet.swift */,
+				86F0AF171D6A587C00283FA8 /* Interaction.swift */,
 			);
 			path = Invader;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				86251EBF1C95BD4A004A65D0 /* Invader.swift in Sources */,
 				8678FE8C1C952E5000E851AA /* AppDelegate.swift in Sources */,
 				868A410E1D1EABD900D04BC7 /* Bullet.swift in Sources */,
+				86F0AF181D6A587C00283FA8 /* Interaction.swift in Sources */,
 				86266E9B1CF2602A00CB4D3A /* KeyStatus.swift in Sources */,
 				86251EBD1C95BB99004A65D0 /* InvaderSquad.swift in Sources */,
 				86266E991CF0B4EB00CB4D3A /* Artillery.swift in Sources */,
