@@ -5,11 +5,13 @@ class Invader: SKSpriteNode {
         self.init(imageNamed:"Invader")
         setScale(0.1)
 
-        let phisicsBody = SKPhysicsBody(rectangleOfSize:self.size)
-        phisicsBody.categoryBitMask = invaderCategory
+        let newPhysicsBody = SKPhysicsBody(rectangleOfSize:self.size)
+        newPhysicsBody.affectedByGravity = false
+        newPhysicsBody.categoryBitMask = invaderCategory
+        newPhysicsBody.contactTestBitMask = artilleryCategory
+        newPhysicsBody.collisionBitMask = 0
 
-
-        self.physicsBody = phisicsBody
+        self.physicsBody = newPhysicsBody
 
     }
 }

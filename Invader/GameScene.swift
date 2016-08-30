@@ -55,14 +55,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let artilleryRect = artillery.calculateAccumulatedFrame()
         artillery.position = CGPoint(x: -artilleryRect.origin.x, y: artilleryRect.size.height)
 
-        let physicsBody = SKPhysicsBody(rectangleOfSize: squadRect.size)
-        physicsBody.dynamic = false
-        invaderSquad.physicsBody = physicsBody
+        //////////////////////////////////////////////////////////////////////
+        // let physicsBody = SKPhysicsBody(rectangleOfSize: squadRect.size) //
+        // physicsBody.dynamic = false                                      //
+        // invaderSquad.physicsBody = physicsBody                           //
+        //////////////////////////////////////////////////////////////////////
 
         self.physicsWorld.contactDelegate = self
 
         addChild(invaderSquad)
         addChild(artillery)
+    }
+
+    func didBeginContact(contact:SKPhysicsContact) {
+        if let node = contact.bodyA.node {
+            invaderSquad.removeChildrenInArray([node])
+        }
+
+        if let node = contact.bodyB.node {
+            invaderSquad.removeChildrenInArray([node])
+        }
     }
 
     override func keyDown(theEvent: NSEvent) {

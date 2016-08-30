@@ -25,11 +25,13 @@ class Artillery: SKSpriteNode {
         let moveUp = SKAction.moveBy(CGVector(dx: 0, dy: scene.size.height), duration: 1.0)
         bullet.runAction(moveUp)
 
-        let bulletRect = bullet.calculateAccumulatedFrame()
-        let physicsBody = SKPhysicsBody(rectangleOfSize: bulletRect.size)
-        bullet.physicsBody = physicsBody
-        physicsBody.affectedByGravity = true
-        physicsBody.mass = 100
+        let newPhysicsBody = SKPhysicsBody(rectangleOfSize: size)
+        newPhysicsBody.affectedByGravity = false
+        newPhysicsBody.categoryBitMask = artilleryCategory
+        newPhysicsBody.contactTestBitMask = 0
+        newPhysicsBody.collisionBitMask = 0
+        self.physicsBody = newPhysicsBody
+
         scene.addChild(bullet)
 
         timeLastBulletWasFired = currentTime;

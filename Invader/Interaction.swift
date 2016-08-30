@@ -9,3 +9,5 @@
 import Foundation
 let invaderCategory: UInt32 = 1 << 0
 let artilleryCategory: UInt32 = 1 << 1
+let bulletCategory: UInt32 = 1 << 2
+let invaderSquad: UInt32 = 1 << 3
