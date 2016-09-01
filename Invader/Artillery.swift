@@ -6,6 +6,13 @@ class Artillery: SKSpriteNode {
     convenience init() {
         self.init(imageNamed:"Spaceship")
         setScale(0.1)
+
+        let newPhysicsBody = SKPhysicsBody(rectangleOfSize: size)
+        newPhysicsBody.affectedByGravity = false
+        newPhysicsBody.categoryBitMask = artilleryCategory
+        newPhysicsBody.contactTestBitMask = 0
+        newPhysicsBody.collisionBitMask = 0
+        self.physicsBody = newPhysicsBody
     }
 
     func fireBullet(currentTime: NSTimeInterval) {
@@ -14,25 +21,17 @@ class Artillery: SKSpriteNode {
             return;
         }
 
-        guard currentTime - timeLastBulletWasFired > 0.1 else {
-            // We can fire 10 times per second.
+        guard currentTime - timeLastBulletWasFired > 0.3 else {
+            // We can fire a bullet once per 0.3 second.
             return;
         }
 
         let bullet = Bullet()
-        bullet.position = self.position
-
-        let moveUp = SKAction.moveBy(CGVector(dx: 0, dy: scene.size.height), duration: 1.0)
-        bullet.runAction(moveUp)
-
-        let newPhysicsBody = SKPhysicsBody(rectangleOfSize: size)
-        newPhysicsBody.affectedByGravity = false
-        newPhysicsBody.categoryBitMask = artilleryCategory
-        newPhysicsBody.contactTestBitMask = 0
-        newPhysicsBody.collisionBitMask = 0
-        self.physicsBody = newPhysicsBody
-
         scene.addChild(bullet)
+
+        bullet.position = self.position
+        bullet.physicsBody!.velocity = self.physicsBody!.velocity
+        bullet.physicsBody!.applyImpulse(CGVector(dx: 1, dy: 65))
 
         timeLastBulletWasFired = currentTime;
     }

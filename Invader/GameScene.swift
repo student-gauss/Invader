@@ -90,11 +90,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
 
         if keyStatus.isLeftArrowKeyPressed {
-            artillery.position.x += -3
+            artillery.physicsBody!.velocity = CGVector(dx: -100, dy:0)
         }
-
-        if keyStatus.isRightArrowKeyPressed {
-            artillery.position.x += +3
+        else if keyStatus.isRightArrowKeyPressed {
+            artillery.physicsBody!.velocity = CGVector(dx: +100, dy:0)
+        }
+        else {
+            artillery.physicsBody!.velocity = CGVector(dx: 0, dy:0)
         }
 
         if keyStatus.isSpaceKeyPressed {
