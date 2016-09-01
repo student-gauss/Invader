@@ -5,6 +5,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let invaderSquad = InvaderSquad(rowCount: 6, columnCount: 20)
     let artillery = Artillery()
     var startTime = Double.NaN
+    let bulletFireSound = SKAction.playSoundFileNamed("bulletFire.aiff", waitForCompletion:false)
 
     override func didMoveToView(view: SKView) {
         //  Squad (A == anchor)
@@ -101,6 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         if keyStatus.isSpaceKeyPressed {
             artillery.fireBullet(currentTime)
+            runAction(bulletFireSound)
         }
     }
 }
