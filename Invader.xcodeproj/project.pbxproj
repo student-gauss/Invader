@@ -20,7 +20,7 @@
 		8678FEA01C952E5000E851AA /* InvaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678FE9F1C952E5000E851AA /* InvaderTests.swift */; };
 		8678FEAB1C952E5000E851AA /* InvaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8678FEAA1C952E5000E851AA /* InvaderUITests.swift */; };
 		868A410E1D1EABD900D04BC7 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A410D1D1EABD900D04BC7 /* Bullet.swift */; };
-		86AB2EA21D78676000B23215 /* bulletFire.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 86AB2EA11D78676000B23215 /* bulletFire.aiff */; };
+		86AB2EA21D78676000B23215 /* bulletFire.caf in Resources */ = {isa = PBXBuildFile; fileRef = 86AB2EA11D78676000B23215 /* bulletFire.caf */; };
 		86F0AF181D6A587C00283FA8 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F0AF171D6A587C00283FA8 /* Interaction.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +60,7 @@
 		8678FEAA1C952E5000E851AA /* InvaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaderUITests.swift; sourceTree = "<group>"; };
 		8678FEAC1C952E5000E851AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		868A410D1D1EABD900D04BC7 /* Bullet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
-		86AB2EA11D78676000B23215 /* bulletFire.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = bulletFire.aiff; sourceTree = SOURCE_ROOT; };
+		86AB2EA11D78676000B23215 /* bulletFire.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bulletFire.caf; sourceTree = SOURCE_ROOT; };
 		86F0AF171D6A587C00283FA8 /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,7 +150,7 @@
 		86AB2EA01D78674F00B23215 /* SoundEffect */ = {
 			isa = PBXGroup;
 			children = (
-				86AB2EA11D78676000B23215 /* bulletFire.aiff */,
+				86AB2EA11D78676000B23215 /* bulletFire.caf */,
 			);
 			name = SoundEffect;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8678FE921C952E5000E851AA /* Assets.xcassets in Resources */,
-				86AB2EA21D78676000B23215 /* bulletFire.aiff in Resources */,
+				86AB2EA21D78676000B23215 /* bulletFire.caf in Resources */,
 				8678FE901C952E5000E851AA /* GameScene.sks in Resources */,
 				8678FE951C952E5000E851AA /* MainMenu.xib in Resources */,
 			);

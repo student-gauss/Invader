@@ -2,6 +2,7 @@ import SpriteKit
 
 class Artillery: SKSpriteNode {
     var timeLastBulletWasFired: NSTimeInterval = 0
+    let bulletFireSound = SKAction.playSoundFileNamed("bulletFire.caf", waitForCompletion:false)
 
     convenience init() {
         self.init(imageNamed:"Spaceship")
@@ -32,6 +33,9 @@ class Artillery: SKSpriteNode {
         bullet.position = self.position
         bullet.physicsBody!.velocity = self.physicsBody!.velocity
         bullet.physicsBody!.applyImpulse(CGVector(dx: 1, dy: 65))
+
+        print("Play Sound!")
+        runAction(bulletFireSound)
 
         timeLastBulletWasFired = currentTime;
     }
