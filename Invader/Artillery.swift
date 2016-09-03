@@ -34,7 +34,6 @@ class Artillery: SKSpriteNode {
         bullet.physicsBody!.velocity = self.physicsBody!.velocity
         bullet.physicsBody!.applyImpulse(CGVector(dx: 1, dy: 65))
 
-        print("Play Sound!")
         runAction(bulletFireSound)
 
         timeLastBulletWasFired = currentTime;

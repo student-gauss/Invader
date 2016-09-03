@@ -50,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let moveDown = SKAction.moveBy(CGVector(dx: 0, dy: -64), duration: 0.5)
         let moveLeft = SKAction.moveBy(CGVector(dx: -(self.size.width - squadRect.size.width), dy: 0), duration: 3)
 
-        invaderSquad.runAction(SKAction.sequence([moveRight, moveDown, moveLeft, moveDown]))
+        invaderSquad.runAction(SKAction.repeatActionForever(SKAction.sequence([moveRight, moveDown, moveLeft, moveDown])))
 
         let artilleryRect = artillery.calculateAccumulatedFrame()
         artillery.position = CGPoint(x: -artilleryRect.origin.x, y: artilleryRect.size.height)
