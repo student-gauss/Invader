@@ -1,14 +1,14 @@
 import SpriteKit
 
 class Artillery: SKSpriteNode {
-    var timeLastBulletWasFired: NSTimeInterval = 0
+    var timeLastBulletWasFired: TimeInterval = 0
     let bulletFireSound = SKAction.playSoundFileNamed("bulletFire.caf", waitForCompletion:false)
 
     convenience init() {
         self.init(imageNamed:"Spaceship")
         setScale(0.1)
 
-        let newPhysicsBody = SKPhysicsBody(rectangleOfSize: size)
+        let newPhysicsBody = SKPhysicsBody(rectangleOf: size)
         newPhysicsBody.affectedByGravity = false
         newPhysicsBody.categoryBitMask = artilleryCategory
         newPhysicsBody.contactTestBitMask = 0
@@ -16,7 +16,7 @@ class Artillery: SKSpriteNode {
         self.physicsBody = newPhysicsBody
     }
 
-    func fireBullet(currentTime: NSTimeInterval) {
+    func fireBullet(_ currentTime: TimeInterval) {
         guard let scene = self.scene else {
             // Artillery was not added to the game scene yet.
             return;
@@ -34,7 +34,7 @@ class Artillery: SKSpriteNode {
         bullet.physicsBody!.velocity = self.physicsBody!.velocity
         bullet.physicsBody!.applyImpulse(CGVector(dx: 1, dy: 65))
 
-        runAction(bulletFireSound)
+        run(bulletFireSound)
 
         timeLastBulletWasFired = currentTime;
     }

@@ -5,7 +5,7 @@ class Bullet: SKSpriteNode {
         self.init(imageNamed:"Bullet")
         setScale(0.5)
 
-        let newPhysicsBody = SKPhysicsBody(rectangleOfSize: size)
+        let newPhysicsBody = SKPhysicsBody(rectangleOf: size)
         newPhysicsBody.affectedByGravity = true
         newPhysicsBody.categoryBitMask = bulletCategory
         newPhysicsBody.contactTestBitMask = invaderCategory

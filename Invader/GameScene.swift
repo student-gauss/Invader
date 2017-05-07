@@ -4,9 +4,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let keyStatus = KeyStatus()
     let invaderSquad = InvaderSquad(rowCount: 6, columnCount: 20)
     let artillery = Artillery()
-    var startTime = Double.NaN
+    var startTime = Double.nan
 
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         //  Squad (A == anchor)
         //         512
         //    +--------------+
@@ -46,11 +46,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //   |                          |
         //   +--------------------------+
         // (0,0)
-        let moveRight = SKAction.moveBy(CGVector(dx: self.size.width - squadRect.size.width, dy: 0), duration: 3)
-        let moveDown = SKAction.moveBy(CGVector(dx: 0, dy: -64), duration: 0.5)
-        let moveLeft = SKAction.moveBy(CGVector(dx: -(self.size.width - squadRect.size.width), dy: 0), duration: 3)
+        let moveRight = SKAction.move(by: CGVector(dx: self.size.width - squadRect.size.width, dy: 0), duration: 3)
+        let moveDown = SKAction.move(by: CGVector(dx: 0, dy: -64), duration: 0.5)
+        let moveLeft = SKAction.move(by: CGVector(dx: -(self.size.width - squadRect.size.width), dy: 0), duration: 3)
 
-        invaderSquad.runAction(SKAction.repeatActionForever(SKAction.sequence([moveRight, moveDown, moveLeft, moveDown])))
+        invaderSquad.run(SKAction.repeatForever(SKAction.sequence([moveRight, moveDown, moveLeft, moveDown])))
 
         let artilleryRect = artillery.calculateAccumulatedFrame()
         artillery.position = CGPoint(x: -artilleryRect.origin.x, y: artilleryRect.size.height)
@@ -61,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(artillery)
     }
 
-    func didBeginContact(contact:SKPhysicsContact) {
+    func didBegin(_ contact:SKPhysicsContact) {
         var nodesToRemove:[SKNode] = []
         if let node = contact.bodyA.node {
             nodesToRemove.append(node)
@@ -71,19 +71,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             nodesToRemove.append(node)
         }
 
-        invaderSquad.removeChildrenInArray(nodesToRemove)
-        removeChildrenInArray(nodesToRemove)
+        invaderSquad.removeChildren(in: nodesToRemove)
+        removeChildren(in: nodesToRemove)
     }
 
-    override func keyDown(theEvent: NSEvent) {
+    override func keyDown(with theEvent: NSEvent) {
         keyStatus.keyDown(theEvent)
     }
 
-    override func keyUp(theEvent: NSEvent) {
+    override func keyUp(with theEvent: NSEvent) {
         keyStatus.keyUp(theEvent)
     }
 
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
         if startTime.isNaN {
             startTime = currentTime
